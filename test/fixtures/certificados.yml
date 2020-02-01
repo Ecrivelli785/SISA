@@ -1,0 +1,43 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_certificado: 1
+  nro_certificado: 1
+  rubro: MyString
+  tratamiento: MyString
+  otro_tratamiento: MyString
+  vectores_tratados: 1
+  otros_vectores: MyString
+  superficie_tratada: MyString
+  veneno_clase: MyString
+  droga_usada: 1
+  otra_droga_usada: MyString
+  fecha_aplicacion: 2020-01-30
+  fecha_vencimiento: 2020-01-30
+  hora_aplicacion: 2020-01-30 11:32:48
+  proximo_tratamiento: 2020-01-30
+  estado: MyString
+  importe: 1.5
+  id_cliente: 1
+  cliente: one
+
+two:
+  id_certificado: 1
+  nro_certificado: 1
+  rubro: MyString
+  tratamiento: MyString
+  otro_tratamiento: MyString
+  vectores_tratados: 1
+  otros_vectores: MyString
+  superficie_tratada: MyString
+  veneno_clase: MyString
+  droga_usada: 1
+  otra_droga_usada: MyString
+  fecha_aplicacion: 2020-01-30
+  fecha_vencimiento: 2020-01-30
+  hora_aplicacion: 2020-01-30 11:32:48
+  proximo_tratamiento: 2020-01-30
+  estado: MyString
+  importe: 1.5
+  id_cliente: 1
+  cliente: two

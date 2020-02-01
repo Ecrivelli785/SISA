@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Certificados</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id certificado</th>
+      <th>Nro certificado</th>
+      <th>Rubro</th>
+      <th>Tratamiento</th>
+      <th>Otro tratamiento</th>
+      <th>Vectores tratados</th>
+      <th>Otros vectores</th>
+      <th>Superficie tratada</th>
+      <th>Veneno clase</th>
+      <th>Droga usada</th>
+      <th>Otra droga usada</th>
+      <th>Fecha aplicacion</th>
+      <th>Fecha vencimiento</th>
+      <th>Hora aplicacion</th>
+      <th>Proximo tratamiento</th>
+      <th>Estado</th>
+      <th>Importe</th>
+      <th>Id cliente</th>
+      <th>Cliente</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @certificados.each do |certificado| %>
+      <tr>
+        <td><%= certificado.id_certificado %></td>
+        <td><%= certificado.nro_certificado %></td>
+        <td><%= certificado.rubro %></td>
+        <td><%= certificado.tratamiento %></td>
+        <td><%= certificado.otro_tratamiento %></td>
+        <td><%= certificado.vectores_tratados %></td>
+        <td><%= certificado.otros_vectores %></td>
+        <td><%= certificado.superficie_tratada %></td>
+        <td><%= certificado.veneno_clase %></td>
+        <td><%= certificado.droga_usada %></td>
+        <td><%= certificado.otra_droga_usada %></td>
+        <td><%= certificado.fecha_aplicacion %></td>
+        <td><%= certificado.fecha_vencimiento %></td>
+        <td><%= certificado.hora_aplicacion %></td>
+        <td><%= certificado.proximo_tratamiento %></td>
+        <td><%= certificado.estado %></td>
+        <td><%= certificado.importe %></td>
+        <td><%= certificado.id_cliente %></td>
+        <td><%= certificado.cliente_id %></td>
+        <td><%= link_to 'Show', certificado %></td>
+        <td><%= link_to 'Edit', edit_certificado_path(certificado) %></td>
+        <td><%= link_to 'Destroy', certificado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Certificado', new_certificado_path %>
