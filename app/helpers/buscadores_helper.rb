@@ -1,0 +1,2 @@
+module BuscadoresHelper
+end
