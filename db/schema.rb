@@ -49,8 +49,6 @@ ActiveRecord::Schema.define(version: 2020_02_08_160641) do
     t.string "estado_mkt"
     t.date "created_at", null: false
     t.date "updated_at", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.string "cuit"
     t.string "correo"
     t.string "observaciones_cliente"
