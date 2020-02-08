@@ -1,5 +1,5 @@
 class ClientesController < ApplicationController
-  before_action :set_cliente, only: [:show, :edit, :update, :destroy]
+  before_action :set_cliente, only: [:show, :edit, :update, :destroy, :search]
 
   # GET /clientes
   # GET /clientes.json
@@ -20,6 +20,7 @@ class ClientesController < ApplicationController
   # GET /clientes/1/edit
   def edit
   end
+
 
   # POST /clientes
   # POST /clientes.json
@@ -69,6 +70,6 @@ class ClientesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cliente_params
-      params.require(:cliente).permit(:id_cliente, :apellido, :nombre, :domicilio, :telefono, :celular, :barrio, :rubro, :estado, :estado_mkt)
+      params.require(:cliente).permit(:apellido, :nombre, :domicilio, :telefono, :celular, :barrio, :estado, :id_rubro, :cuit, :correo)
     end
 end
