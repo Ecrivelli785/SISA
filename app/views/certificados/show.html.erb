@@ -2,7 +2,7 @@
 
 <p>
   <strong>Id certificado:</strong>
-  <%= @certificado.id_certificado %>
+  <%= @certificado.id %>
 </p>
 
 <p>
@@ -13,6 +13,11 @@
 <p>
   <strong>Rubro:</strong>
   <%= @certificado.id_rubro %>
+</p>
+
+<p>
+  <strong>Fecha aplicacion:</strong>
+  <%= @certificado.fecha_aplicacion %>
 </p>
 
 <p>
@@ -54,12 +59,6 @@
   <strong>Otra droga usada:</strong>
   <%= @certificado.otra_droga_usada %>
 </p>
-
-<p>
-  <strong>Fecha aplicacion:</strong>
-  <%= @certificado.fecha_aplicacion %>
-</p>
-
 <p>
   <strong>Fecha vencimiento:</strong>
   <%= @certificado.fecha_vencimiento %>

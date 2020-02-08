@@ -16,7 +16,7 @@
       <th>Veneno clase</th>
       <th>Droga usada</th>
       <th>Otra droga usada</th>
-      <th>Fecha aplicacion</th>
+      <th>Fecha aplicacion</th>      
       <th>Fecha vencimiento</th>
       <th>Hora aplicacion</th>
       <th>Proximo tratamiento</th>
@@ -31,7 +31,7 @@
   <tbody>
     <% @certificados.each do |certificado| %>
       <tr>
-        <td><%= certificado.id_certificado %></td>
+        <td><%= certificado.id %></td>
         <td><%= certificado.nro_certificado %></td>
         <td><%= certificado.id_rubro %></td>
         <td><%= certificado.tratamiento %></td>
@@ -42,7 +42,7 @@
         <td><%= certificado.veneno_clase %></td>
         <td><%= certificado.droga_usada %></td>
         <td><%= certificado.otra_droga_usada %></td>
-        <td><%= certificado.fecha_aplicacion %></td>
+        <td><%= certificado.fecha_aplicacion %></td>        
         <td><%= certificado.fecha_vencimiento %></td>
         <td><%= certificado.hora_aplicacion %></td>
         <td><%= certificado.proximo_tratamiento %></td>
