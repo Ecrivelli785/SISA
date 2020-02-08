@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.1" last-position="0,0" last-zoom="1"
+	 default-schema="public" default-owner="postgres">
+<role name="mdiaz"
+      createdb="true"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="login"
+      createdb="true"
+      inherit="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="createdb"
+      inherit="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<database name="PEDIDOS" encoding="UTF8" lc-collate="es_AR.UTF-8" lc-ctype="es_AR.UTF-8" is-template="false" allow-conns="true">
+	<role name="postgres"/>
+	<tablespace name="pg_default"/>
+</database>
+
+<schema name="public" rect-visible="true" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<table name="empleados">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="723" y="374"/>
+	<column name="empleadoid" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="nombre">
+		<type name="character" length="30"/>
+	</column>
+	<column name="apellido">
+		<type name="character" length="30"/>
+	</column>
+	<column name="fecha_nac">
+		<type name="date" length="0"/>
+	</column>
+	<column name="reporta_a">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="extension">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="pk_empleados" type="pk-constr" table="public.empleados">
+		<columns names="empleadoid" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="proveedores">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="224" y="755"/>
+	<column name="proveedorid" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="nombreprov" not-null="true">
+		<type name="character" length="50"/>
+	</column>
+	<column name="contacto" not-null="true">
+		<type name="character" length="50"/>
+	</column>
+	<column name="celuprov">
+		<type name="character" length="12"/>
+	</column>
+	<column name="fijoprov">
+		<type name="character" length="12"/>
+	</column>
+	<constraint name="pk_proveedores" type="pk-constr" table="public.proveedores">
+		<columns names="proveedorid" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="categorias">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1428" y="721"/>
+	<column name="categoriaid" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="nombrecat" not-null="true">
+		<type name="character" length="50"/>
+	</column>
+	<constraint name="pk_categorias" type="pk-constr" table="public.categorias">
+		<columns names="categoriaid" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="clientes">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1342" y="417"/>
+	<column name="clienteid" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="cedula_ruc" not-null="true">
+		<type name="character" length="10"/>
+	</column>
+	<column name="nombrecia" not-null="true">
+		<type name="character" length="30"/>
+	</column>
+	<column name="nombrecontacto" not-null="true">
+		<type name="character" length="50"/>
+	</column>
+	<column name="direccioncli" not-null="true">
+		<type name="character" length="50"/>
+	</column>
+	<column name="fax">
+		<type name="character" length="12"/>
+	</column>
+	<column name="email">
+		<type name="character" length="50"/>
+	</column>
+	<column name="celular">
+		<type name="character" length="12"/>
+	</column>
+	<column name="fijo">
+		<type name="character" length="12"/>
+	</column>
+	<constraint name="pk_clientes" type="pk-constr" table="public.clientes">
+		<columns names="clienteid" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="ordenes">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1025" y="82"/>
+	<column name="ordenid" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="empleadoid" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="clienteid" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="fechaorden" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="descuento">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="pk_ordenes" type="pk-constr" table="public.ordenes">
+		<columns names="ordenid" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="detalle_ordenes">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="23" y="68"/>
+	<column name="ordenid" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="detalleid" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="productoid" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="cantidad" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="pk_detalle_ordenes" type="pk-constr" table="public.detalle_ordenes">
+		<columns names="ordenid,detalleid" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="productos">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="793" y="682"/>
+	<column name="productoid" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="proveedorid" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="categoriaid" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="descripcion">
+		<type name="character" length="50"/>
+	</column>
+	<column name="preciounit" not-null="true">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="existencia" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="pk_productos" type="pk-constr" table="public.productos">
+		<columns names="productoid" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<constraint name="fk_empleado_reporta" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="public.empleados" table="public.empleados">
+	<columns names="reporta_a" ref-type="src-columns"/>
+	<columns names="empleadoid" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_ordenes_clien_ord_clientes" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="public.clientes" table="public.ordenes">
+	<columns names="clienteid" ref-type="src-columns"/>
+	<columns names="clienteid" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_ordenes_emple_ord_empleado" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="public.empleados" table="public.ordenes">
+	<columns names="empleadoid" ref-type="src-columns"/>
+	<columns names="empleadoid" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_detalle__orden_det_ordenes" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="public.ordenes" table="public.detalle_ordenes">
+	<columns names="ordenid" ref-type="src-columns"/>
+	<columns names="ordenid" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_detalle__prod_deta_producto" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="public.productos" table="public.detalle_ordenes">
+	<columns names="productoid" ref-type="src-columns"/>
+	<columns names="productoid" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_producto_cate_prod_categori" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="public.categorias" table="public.productos">
+	<columns names="categoriaid" ref-type="src-columns"/>
+	<columns names="categoriaid" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_producto_prov_prod_proveedo" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="public.proveedores" table="public.productos">
+	<columns names="proveedorid" ref-type="src-columns"/>
+	<columns names="proveedorid" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="rel_empleados_empleados" type="relfk"
+	 custom-color="#2ef78c"
+	 src-table="public.empleados"
+	 dst-table="public.empleados" reference-fk="fk_empleado_reporta"
+	 src-required="false" dst-required="false">
+	<line>
+		<position x="1036.29" y="427.417"/>
+	<position x="1036.29" y="363"/>
+	<position x="924.524" y="363"/>
+	</line>
+</relationship>
+
+<relationship name="rel_ordenes_clientes" type="relfk"
+	 custom-color="#e37854"
+	 src-table="public.ordenes"
+	 dst-table="public.clientes" reference-fk="fk_ordenes_clien_ord_clientes"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_ordenes_empleados" type="relfk"
+	 custom-color="#1c1983"
+	 src-table="public.ordenes"
+	 dst-table="public.empleados" reference-fk="fk_ordenes_emple_ord_empleado"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_detalle_ordenes_ordenes" type="relfk"
+	 custom-color="#975abe"
+	 src-table="public.detalle_ordenes"
+	 dst-table="public.ordenes" reference-fk="fk_detalle__orden_det_ordenes"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-7.51874" y="-11.7607"/>
+	</label>
+</relationship>
+
+<relationship name="rel_detalle_ordenes_productos" type="relfk"
+	 custom-color="#ca1717"
+	 src-table="public.detalle_ordenes"
+	 dst-table="public.productos" reference-fk="fk_detalle__prod_deta_producto"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_productos_categorias" type="relfk"
+	 custom-color="#aefb97"
+	 src-table="public.productos"
+	 dst-table="public.categorias" reference-fk="fk_producto_cate_prod_categori"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_productos_proveedores" type="relfk"
+	 custom-color="#d6bafb"
+	 src-table="public.productos"
+	 dst-table="public.proveedores" reference-fk="fk_producto_prov_prod_proveedo"
+	 src-required="false" dst-required="false"/>
+
+</dbmodel>

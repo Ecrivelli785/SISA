@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.1" last-position="189,0" last-zoom="1"
+	 default-schema="public" default-owner="postgres">
+<role name="mdiaz"
+      createdb="true"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="login"
+      createdb="true"
+      inherit="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="createdb"
+      inherit="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<database name="SISA_development" encoding="UTF8" lc-collate="es_AR.UTF-8" lc-ctype="es_AR.UTF-8" is-template="false" allow-conns="true">
+	<role name="mdiaz"/>
+	<tablespace name="pg_default"/>
+</database>
+
+<schema name="public" rect-visible="true" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<table name="schema_migrations">
+	<schema name="public"/>
+	<role name="mdiaz"/>
+	<position x="50" y="50"/>
+	<column name="version" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<constraint name="schema_migrations_pkey" type="pk-constr" table="public.schema_migrations">
+		<columns names="version" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="ar_internal_metadata">
+	<schema name="public"/>
+	<role name="mdiaz"/>
+	<position x="427.224" y="50"/>
+	<column name="key" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="value">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="created_at" not-null="true">
+		<type name="timestamp" length="0" precision="6"/>
+	</column>
+	<column name="updated_at" not-null="true">
+		<type name="timestamp" length="0" precision="6"/>
+	</column>
+	<constraint name="ar_internal_metadata_pkey" type="pk-constr" table="public.ar_internal_metadata">
+		<columns names="key" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="clientes_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="9223372036854775807"
+	 cache="1" cycle="false">
+	<schema name="public"/>
+	<role name="mdiaz"/>
+</sequence>
+
+<table name="clientes">
+	<schema name="public"/>
+	<role name="mdiaz"/>
+	<position x="816.072" y="50"/>
+	<column name="id" not-null="true" sequence="public.clientes_id_seq">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="id_cliente">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="apellido">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="nombre">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="domicilio">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="telefono">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="celular">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="barrio">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="rubro">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="estado">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="estado_mkt">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="created_at" not-null="true">
+		<type name="timestamp" length="0" precision="6"/>
+	</column>
+	<column name="updated_at" not-null="true">
+		<type name="timestamp" length="0" precision="6"/>
+	</column>
+	<constraint name="clientes_pkey" type="pk-constr" table="public.clientes">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="certificados_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="9223372036854775807"
+	 cache="1" cycle="false">
+	<schema name="public"/>
+	<role name="mdiaz"/>
+</sequence>
+
+<table name="certificados">
+	<schema name="public"/>
+	<role name="mdiaz"/>
+	<position x="1132.17" y="50"/>
+	<column name="id" not-null="true" sequence="public.certificados_id_seq">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="id_certificado">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="nro_certificado">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="rubro">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="tratamiento">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="otro_tratamiento">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="vectores_tratados">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="otros_vectores">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="superficie_tratada">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="veneno_clase">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="droga_usada">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="otra_droga_usada">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="fecha_aplicacion">
+		<type name="date" length="0"/>
+	</column>
+	<column name="fecha_vencimiento">
+		<type name="date" length="0"/>
+	</column>
+	<column name="hora_aplicacion">
+		<type name="time" length="0"/>
+	</column>
+	<column name="proximo_tratamiento">
+		<type name="date" length="0"/>
+	</column>
+	<column name="estado">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="importe">
+		<type name="double precision" length="0"/>
+	</column>
+	<column name="id_cliente">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="cliente_id" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="created_at" not-null="true">
+		<type name="timestamp" length="0" precision="6"/>
+	</column>
+	<column name="updated_at" not-null="true">
+		<type name="timestamp" length="0" precision="6"/>
+	</column>
+	<column name="observaciones">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="certificados_pkey" type="pk-constr" table="public.certificados">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="index_certificados_on_cliente_id" table="public.certificados"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="90">
+		<idxelement use-sorting="false">
+			<column name="cliente_id"/>
+		</idxelement>
+</index>
+
+<sequence name="tecnicos_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="9223372036854775807"
+	 cache="1" cycle="false">
+	<schema name="public"/>
+	<role name="mdiaz"/>
+</sequence>
+
+<table name="tecnicos">
+	<schema name="public"/>
+	<role name="mdiaz"/>
+	<position x="1550.19" y="50"/>
+	<column name="id" not-null="true" sequence="public.tecnicos_id_seq">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="dni">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="apellido">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="nombre">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="domicilio">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="telefono">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="created_at" not-null="true">
+		<type name="timestamp" length="0" precision="6"/>
+	</column>
+	<column name="updated_at" not-null="true">
+		<type name="timestamp" length="0" precision="6"/>
+	</column>
+	<constraint name="tecnicos_pkey" type="pk-constr" table="public.tecnicos">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<constraint name="fk_rails_eb9e12893e" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.clientes" table="public.certificados">
+	<columns names="cliente_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="rel_certificados_clientes" type="relfk"
+	 custom-color="#194948"
+	 src-table="public.certificados"
+	 dst-table="public.clientes" reference-fk="fk_rails_eb9e12893e"
+	 src-required="false" dst-required="false"/>
+
+</dbmodel>
