@@ -1,0 +1,2 @@
+class Droga < ApplicationRecord
+end
