@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 2020_02_01_190541) do
     t.string "rubro"
     t.boolean "estado"
     t.string "estado_mkt"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.date "created_at", null: false
+    t.date "updated_at", null: false
   end
 
   create_table "tecnicos", force: :cascade do |t|
