@@ -1,9 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Id certificado:</strong>
-  <%= @certificado.id %>
-</p>
 
 <p>
   <strong>Nro certificado:</strong>
@@ -16,49 +12,31 @@
 </p>
 
 <p>
+  <strong>Tratamiento:</strong>
+  <%= @certificado.id_tratamiento %>
+</p>
+
+<p>
+  <strong>Vectores:</strong>
+  <%= @certificado.id_vector %>
+</p>
+
+<p>
+  <strong>Superficie:</strong>
+  <%= @certificado.superficie%>
+</p>
+
+<p>
+  <strong>Veneno:</strong>
+  <%= @certificado.id_drogas %>
+</p>
+
+
+<p>
   <strong>Fecha aplicacion:</strong>
   <%= @certificado.fecha_aplicacion %>
 </p>
 
-<p>
-  <strong>Tratamiento:</strong>
-  <%= @certificado.tratamiento %>
-</p>
-
-<p>
-  <strong>Otro tratamiento:</strong>
-  <%= @certificado.otro_tratamiento %>
-</p>
-
-<p>
-  <strong>Vectores tratados:</strong>
-  <%= @certificado.vectores_tratados %>
-</p>
-
-<p>
-  <strong>Otros vectores:</strong>
-  <%= @certificado.otros_vectores %>
-</p>
-
-<p>
-  <strong>Superficie tratada:</strong>
-  <%= @certificado.superficie_tratada %>
-</p>
-
-<p>
-  <strong>Veneno clase:</strong>
-  <%= @certificado.veneno_clase %>
-</p>
-
-<p>
-  <strong>Droga usada:</strong>
-  <%= @certificado.droga_usada %>
-</p>
-
-<p>
-  <strong>Otra droga usada:</strong>
-  <%= @certificado.otra_droga_usada %>
-</p>
 <p>
   <strong>Fecha vencimiento:</strong>
   <%= @certificado.fecha_vencimiento %>
@@ -74,24 +52,15 @@
   <%= @certificado.proximo_tratamiento %>
 </p>
 
-<p>
-  <strong>Estado:</strong>
-  <%= @certificado.estado %>
-</p>
 
 <p>
-  <strong>Importe:</strong>
-  <%= @certificado.importe %>
+  <strong>Codigo:</strong>
+  <%= @certificado.codigo %>
 </p>
 
 <p>
   <strong>Id cliente:</strong>
   <%= @certificado.id_cliente %>
-</p>
-
-<p>
-  <strong>Cliente:</strong>
-  <%= @certificado.cliente_id %>
 </p>
 
 <%= link_to 'Edit', edit_certificado_path(@certificado) %> |
