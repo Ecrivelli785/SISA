@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 2020_02_08_193516) do
     t.date "proximo_tratamiento"
     t.string "estado"
     t.integer "id_cliente"
-    t.date "created_at", null: false
-    t.date "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.integer "id_rubro"
     t.integer "id_tratamiento"
     t.integer "id_vector"
@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 2020_02_08_193516) do
     t.string "barrio"
     t.boolean "estado"
     t.string "estado_mkt"
-    t.date "created_at", null: false
-    t.date "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.string "cuit"
     t.string "correo"
     t.string "observaciones_cliente"
@@ -70,8 +70,8 @@ ActiveRecord::Schema.define(version: 2020_02_08_193516) do
 
   create_table "rubros", force: :cascade do |t|
     t.string "descripcion_tr"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "tecnicos", force: :cascade do |t|
