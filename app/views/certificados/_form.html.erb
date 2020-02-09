@@ -1,31 +1,25 @@
-
 <%= simple_form_for(@certificado) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :id %>
     <%= f.input :nro_certificado %>
     <%= f.input :id_rubro %>
-    <%= f.input :tratamiento %>
-    <%= f.input :otro_tratamiento %>
-    <%= f.input :vectores_tratados %>
-    <%= f.input :otros_vectores %>
-    <%= f.input :superficie_tratada %>
-    <%= f.input :veneno_clase %>
-    <%= f.input :droga_usada %>
-    <%= f.input :otra_droga_usada %>
+    <%= f.input :id_tratamiento %>
+    <%= f.input :id_vector %>
+    <%= f.input :superficie %>
+    <%= f.input :id_drogas %>
     <%= f.input :fecha_aplicacion %>
     <%= f.input :fecha_vencimiento %>
     <%= f.input :hora_aplicacion %>
     <%= f.input :proximo_tratamiento %>
-    <%= f.input :estado %>
-    <%= f.input :importe %>
+    <%= f.input :codigo %>
     <%= f.input :id_cliente %>
-    <%= f.association :cliente %>
+    <%= f.input :observaciones_certificado %>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
 <% end %>
+
