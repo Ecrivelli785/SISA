@@ -5,6 +5,7 @@ class ClientesController < ApplicationController
   # GET /clientes.json
   def index
     @clientes = Cliente.all
+    @clientes = Cliente.includes(:certificado).all
   end
 
   # GET /clientes/1
@@ -57,7 +58,16 @@ class ClientesController < ApplicationController
   def destroy
     @cliente.destroy
     redirect_to clientes_path
+    # respond_to do |format|
+    #   format.html { notice: 'Cliente was successfully destroyed'}
+    #   format.json { head :no_content}
+    # end
   end
+
+  def join_cc
+    @certificados_c = Certificados.joins(:clientes)
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

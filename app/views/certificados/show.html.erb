@@ -63,5 +63,8 @@
   <%= @certificado.id_cliente %>
 </p>
 
-<%= link_to 'Edit', edit_certificado_path(@certificado) %> |
-<%= link_to 'Back', certificados_path %>
+
+<div class="d-flex bd-highlight mb-3">
+  <div class="p-2 bd-highlight"><%= button_to  'Editar', edit_certificado_path(@certificado),method: :get %></div>
+  <div class=" bd-highlight btn btn-success btn-sm">  <%= link_to 'Back', certificado_path %></div>
+</div>

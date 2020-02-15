@@ -1,5 +1,5 @@
 class TecnicosController < ApplicationController
-  before_action :set_tecnico, only: [:show, :edit, :update, :destroy]
+  before_action :set_tecnico, only: [:show, :edit, :update, :destroy, :searchtecnico]
 
   # GET /tecnicos
   # GET /tecnicos.json
@@ -61,14 +61,14 @@ class TecnicosController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_tecnico
-      @tecnico = Tecnico.find(params[:id])
-    end
+private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_tecnico
+    @tecnico = Tecnico.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def tecnico_params
-      params.require(:tecnico).permit(:dni, :apellido, :nombre, :domicilio, :telefono)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def tecnico_params
+    params.require(:tecnico).permit(:dni, :apellido, :nombre, :domicilio, :telefono)
+  end
 end
