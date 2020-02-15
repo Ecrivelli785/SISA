@@ -2,7 +2,7 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
+  <div class="form-inputs container hight:500px">
     <%= f.input :nro_certificado %>
     <%= f.input :id_rubro %>
     <%= f.input :id_tratamiento %>
