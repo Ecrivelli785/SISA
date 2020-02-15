@@ -54,9 +54,12 @@ class ClientesController < ApplicationController
 
   # DELETE /clientes/1
   # DELETE /clientes/1.json
+  # BAJA LOGICA DE CLIENTE
   def destroy
     @cliente.destroy
+    #Cliente.estado = false
     respond_to do |format|
+
       format.html { redirect_to clientes_url, notice: 'Cliente was successfully destroyed.' }
       format.json { head :no_content }
     end
@@ -65,6 +68,7 @@ class ClientesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cliente
+      #@cliente = 5
       @cliente = Cliente.find(params[:id])
     end
 

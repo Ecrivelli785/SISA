@@ -53,6 +53,7 @@ class CertificadosController < ApplicationController
 
   # DELETE /certificados/1
   # DELETE /certificados/1.json
+  # BAJA LOGICA DE CERTIFICADO
   def destroy
     @certificado.destroy
     respond_to do |format|

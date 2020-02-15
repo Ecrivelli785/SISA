@@ -47,11 +47,14 @@
         <td><%= cliente.correo %></td>
         <td><%= link_to 'Detalle', cliente %></td>
         <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
-        <td><%= link_to 'Eliminar', cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Eliminar', cliente,method: :delete, data: { confirm: 'Esta seguro de borrar?' } %></td>
+        <td><%= link_to 'Destroy', { :action => :destroy, :id => cliente.id }, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
       </tr>
     <% end %>
+
   </tbody>
   </div>
+  
 </table>
 
 <br>
