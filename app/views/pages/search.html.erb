@@ -1,7 +1,36 @@
 
-<h3>Search Result</h3>
+<h3>Resultados encontrados</h3>
+ <table>
+ <thead>
+    <tr>
+      <th>Apellido</th>
+      <th>Nombre</th>
+      <th>Domicilio</th>
+      <th>Telefono</th>
+      <th>Celular</th>
+      <th>Barrio</th>
+      <th>Rubro</th>
+      <th>Tipo de Cliente</th>
+      <th>CUIT</th>
+      <th>Correo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
+  <tbody>
     <% @results.each do |result| %>
-        <%= result.nombre %><br>
-        <%= result.apellido %><br>
+      <tr>
+        <td><%= result.apellido %></td>
+        <td><%= result.nombre %></td>
+        <td><%= result.domicilio %></td>
+        <td><%= result.telefono %></td>
+        <td><%= result.celular %></td>
+        <td><%= result.barrio %></td>
+        <td><%= result.id_rubro %></td>
+        <td><%= result.id_tipo_cliente %></td>
+        <td><%= result.cuit %></td>
+        <td><%= result.correo %></td>
+        <td><%= link_to 'Detalle', result %></td>
     <% end %>
+  </tbody>
+</table>

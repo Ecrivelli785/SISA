@@ -45,15 +45,14 @@
         <td><%= cliente.id_tipo_cliente %></td>
         <td><%= cliente.cuit %></td>
         <td><%= cliente.correo %></td>
-        <td><%= link_to 'Detalle', cliente %></td>
-        <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
-        <td><%= link_to 'Eliminar', cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to  'Detalle', cliente, method: :get %></td>
+        <td><%= button_to  'Editar', edit_cliente_path(cliente),method: :get %></td>
+        <td><%= button_to 'Eliminar', cliente_path(cliente),method: :delete, data: { confirm: "Estás seguro?" }  %></td>
       </tr>
     <% end %>
   </tbody>
   </div>
 </table>
-
 <br>
 
 
