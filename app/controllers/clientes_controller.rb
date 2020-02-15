@@ -29,7 +29,7 @@ class ClientesController < ApplicationController
 
     respond_to do |format|
       if @cliente.save
-        format.html { redirect_to @cliente, notice: 'Cliente was successfully created.' }
+        format.html { redirect_to @cliente, notice: 'El cliente fue creado.' }
         format.json { render :show, status: :created, location: @cliente }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class ClientesController < ApplicationController
   def update
     respond_to do |format|
       if @cliente.update(cliente_params)
-        format.html { redirect_to @cliente, notice: 'Cliente was successfully updated.' }
+        format.html { redirect_to @cliente, notice: 'EL cliente fue actualizado.' }
         format.json { render :show, status: :ok, location: @cliente }
       else
         format.html { render :edit }
@@ -56,14 +56,23 @@ class ClientesController < ApplicationController
   # DELETE /clientes/1.json
   # BAJA LOGICA DE CLIENTE
   def destroy
+
     @cliente.destroy
-    #Cliente.estado = false
+
+    redirect_to clientes_path
+
     respond_to do |format|
 
-      format.html { redirect_to clientes_url, notice: 'Cliente was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to clientes_url, notice: 'Cliente was successfully destroyed'}
+
+      format.json { head :no_content}
+
     end
+
   end
+
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

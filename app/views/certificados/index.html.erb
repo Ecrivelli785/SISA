@@ -9,7 +9,7 @@
     <%= link_to 'Nuevo Certificado',  new_certificado_path, class: 'btn btn-success btn-cliente' %>
   </div>
 </div>
-  <%= form_tag(search_page_path, :method => "get") do %>
+  <%= form_tag(searchcertificado_page_path, :method => "get") do %>
 <div class="input-group my-3">
   <%= search_field_tag :search, params[:search], placeholder: "Buscar...", class: "form-control" %>
 </div>
@@ -50,9 +50,9 @@
         <td><%= certificado.hora_aplicacion %></td>
         <td><%= certificado.codigo %></td>
         <td><%= certificado.id_cliente %></td>
-        <td><%= link_to 'Show', certificado %></td>
-        <td><%= link_to 'Edit', edit_certificado_path(certificado) %></td>
-        <td><%= link_to 'Destroy', certificado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to  'Detalle', certificado, method: :get %></td>
+        <td><%= button_to  'Editar', edit_certificado_path(certificado),method: :get %></td>
+        <td><%= button_to 'Eliminar', certificado_path(certificado),method: :delete, data: { confirm: "Estás seguro?" }  %></td>
       </tr>
     <% end %>
   </tbody>
