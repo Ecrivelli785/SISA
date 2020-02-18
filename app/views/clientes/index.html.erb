@@ -15,27 +15,6 @@
 <% end %>
 
 <div calss="container" style="overflow-y: scroll; height:400px; overflow-x: scroll; width:1000px">
-<<<<<<< HEAD
-  <table>
-    <thead>
-      <tr>
-        <th>Apellido</th>
-        <th>Nombre</th>
-        <th>Domicilio</th>
-        <th>Telefono</th>
-        <th>Celular</th>
-        <th>Barrio</th>
-        <th>Rubro</th>
-        <th>Tipo de Cliente</th>
-        <th>CUIT</th>
-        <th>Correo</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @clientes.each do |cliente| %>
-=======
 <table>
   <thead>
     <tr>
@@ -54,9 +33,8 @@
   </thead>
 
   <tbody>
-    <% @union_cr.each do |cliente| %>
+    <% @clientes.each do |cliente| %>
       <%if cliente.estado == true %>
->>>>>>> master
         <tr>
           <td><%= cliente.apellido %></td>
           <td><%= cliente.nombre %></td>
@@ -69,27 +47,12 @@
           <td><%= cliente.cuit %></td>
           <td><%= cliente.correo %></td>
           <td><%= button_to  'Detalle', cliente, method: :get %></td>
-<<<<<<< HEAD
           <td><%= button_to 'Eliminar', cliente_path(cliente),method: :delete, data: { confirm: "Estás seguro?" }  %></td>
         </tr>
+      <% end %>
       <% end %>
     </tbody>
   </table>
 </div>
-<br>
 
-=======
-          <td><%= button_to  'Editar', edit_cliente_path(cliente),method: :get %></td>
-          <td><%= button_to 'Eliminar', cliente_path(cliente),method: :delete, data: { confirm: "Estás seguro?" }  %></td>
-        
-            
-        </tr>
-      <% else %>    
-      <% end %>
-    <% end %>
-  </tbody>
-  </div>
-  
-</table>
->>>>>>> master
 
