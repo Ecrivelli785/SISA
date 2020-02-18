@@ -61,6 +61,11 @@ class CertificadosController < ApplicationController
     end
   end
 
+  def join_cc
+    @certificados_c = Certificados.joins(:clientes).where(certificados: { id_cliente:  id_cliente})
+    Certificados.joins(:tipos_clientes, :tratamientos, :vectores, :drogas)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_certificado
@@ -69,6 +74,6 @@ class CertificadosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def certificado_params
-      params.require(:certificado).permit(:id, :nro_certificado, :rubro, :tratamiento, :otro_tratamiento, :vectores_tratados, :otros_vectores, :superficie_tratada, :veneno_clase, :droga_usada, :otra_droga_usada, :fecha_aplicacion, :fecha_vencimiento, :hora_aplicacion, :proximo_tratamiento, :estado, :importe, :id_cliente, :cliente_id)
+      params.require(:certificado).permit(:id, :nro_certificado, :id_rubro, :id_tratamiento, :id_vector, :superficie, :fecha_aplicacion, :fecha_vencimiento, :hora_aplicacion, :proximo_tratamiento, :estado, :observaciones_certificado, :codigo, :id_cliente, :id_drogas, cliente_attributes: [:cliente_id, :apellido, :nombre, :domicilio, :telefono, :celular, :barrio, :estado, :id_rubro, :cuit, :correo])
     end
 end
