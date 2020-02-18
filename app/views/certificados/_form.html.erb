@@ -15,9 +15,19 @@
     <%= f.input :proximo_tratamiento %>
     <%= f.input :codigo %>
     <%= f.input :id_cliente %>
-    <%= f.input :observaciones_certificado %>
+    <div class="input-group">
+          <select class="custom-select" id="inputGroupSelect04">
+            
+            <option selected>Seleccionar</option>
+            <option value= id_cliente > nada </option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button">Button</button>
+          </div>
+     </div>    
   </div>
-
   <div class="form-actions">
     <%= f.button :submit %>
   </div>

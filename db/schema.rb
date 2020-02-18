@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_02_15_235925) do
+=======
+ActiveRecord::Schema.define(version: 2020_02_15_202958) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,10 +32,9 @@ ActiveRecord::Schema.define(version: 2020_02_15_235925) do
     t.date "fecha_vencimiento"
     t.time "hora_aplicacion"
     t.date "proximo_tratamiento"
-    t.string "estado"
     t.integer "id_cliente"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.date "created_at", null: false
+    t.date "updated_at", null: false
     t.integer "id_rubro"
     t.integer "id_tratamiento"
     t.integer "id_vector"
@@ -41,6 +44,7 @@ ActiveRecord::Schema.define(version: 2020_02_15_235925) do
     t.integer "id_tipo_cliente"
     t.string "observaciones_certificado"
     t.integer "id_tecnico"
+    t.boolean "estado"
   end
 
   create_table "cliente_certificados", force: :cascade do |t|
@@ -59,8 +63,8 @@ ActiveRecord::Schema.define(version: 2020_02_15_235925) do
     t.string "barrio"
     t.boolean "estado"
     t.string "estado_mkt"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "cuit"
     t.string "correo"
     t.string "observaciones_cliente"
@@ -77,8 +81,8 @@ ActiveRecord::Schema.define(version: 2020_02_15_235925) do
 
   create_table "rubros", force: :cascade do |t|
     t.string "descripcion_tr"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tecnicos", force: :cascade do |t|
@@ -86,10 +90,11 @@ ActiveRecord::Schema.define(version: 2020_02_15_235925) do
     t.string "apellido"
     t.string "nombre"
     t.string "domicilio"
-    t.integer "telefono"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "observaciones_tecnico"
+    t.string "telefono"
+    t.boolean "estado"
   end
 
   create_table "tipos_clientes", force: :cascade do |t|
