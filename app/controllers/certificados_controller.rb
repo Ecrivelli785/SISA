@@ -65,13 +65,7 @@ class CertificadosController < ApplicationController
   end
 
   def join_cc
-    #SELECT *
-#FROM certificados
-#INNER JOIN clientes
-#ON certificados.id_cliente=clientes.id_cliente
-
-    @certificados_c = Certificados.joins(:clientes).where(certificados: { id_cliente:  10})
-    Certificados.joins(:tipos_clientes, :tratamientos, :vectores, :drogas)
+    @certificados_c = Certificado.joins(:cliente)
   end
 
   private
@@ -82,6 +76,6 @@ class CertificadosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def certificado_params
-      params.require(:certificado).permit(:id, :nro_certificado, :id_rubro, :id_tratamiento, :id_vector, :superficie, :fecha_aplicacion, :fecha_vencimiento, :hora_aplicacion, :proximo_tratamiento, :estado, :observaciones_certificado, :codigo, :id_cliente, :id_drogas, cliente_attributes: [:id_cliente, :apellido, :nombre, :domicilio, :telefono, :celular, :barrio, :estado, :id_rubro, :cuit, :correo])
+      params.require(:certificado).permit(:id, :nro_certificado, :id_rubro, :id_tratamiento, :id_vector, :superficie, :fecha_aplicacion, :fecha_vencimiento, :hora_aplicacion, :proximo_tratamiento, :estado, :observaciones_certificado, :codigo, :id_cliente, :id_drogas, cliente_attributes: [:cliente_id, :apellido, :nombre, :domicilio, :telefono, :celular, :barrio, :estado, :id_rubro, :cuit, :correo])
     end
 end

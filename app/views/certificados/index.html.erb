@@ -1,6 +1,4 @@
 <p id="notice"><%= notice %></p>
-
-
 <div class="d-flex justify-content-between">
   <div>
     <h1>Certificados</h1>
@@ -47,7 +45,7 @@
         <td><%= certificado.fecha_vencimiento %></td>
         <td><%= certificado.hora_aplicacion %></td>
         <td><%= certificado.codigo %></td>
-        <td><%= certificado.cliente.try(:nombre)%></td>
+        <td><%= certificado.cliente.nombre%></td>
         <td><%= button_to  'Detalle', certificado, method: :get %></td>
         <td><%= button_to 'Eliminar', certificado_path(certificado),method: :delete, data: { confirm: "Estás seguro?" }  %></td>
       </tr>
