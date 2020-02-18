@@ -31,16 +31,19 @@
 
   <tbody>
     <% @tecnicos.each do |tecnico| %>
-      <tr>
-        <td><%= tecnico.dni %></td>
-        <td><%= tecnico.apellido %></td>
-        <td><%= tecnico.nombre %></td>
-        <td><%= tecnico.domicilio %></td>
-        <td><%= tecnico.telefono %></td>
-        <td><%= button_to  'Detalle', tecnico, method: :get %></td>
-        <td><%= button_to  'Editar', edit_tecnico_path(tecnico),method: :get %></td>
-        <td><%= button_to 'Eliminar', tecnico_path(tecnico),method: :delete, data: { confirm: "Estás seguro?" }  %></td>
-      </tr>
+      <%if tecnico.estado == true %>
+        <tr>
+          <td><%= tecnico.dni %></td>
+          <td><%= tecnico.apellido %></td>
+          <td><%= tecnico.nombre %></td>
+          <td><%= tecnico.domicilio %></td>
+          <td><%= tecnico.telefono %></td>
+          <td><%= button_to  'Detalle', tecnico, method: :get %></td>
+          <td><%= button_to  'Editar', edit_tecnico_path(tecnico),method: :get %></td>
+          <td><%= button_to 'Eliminar', tecnico_path(tecnico),method: :delete, data: { confirm: "Estás seguro?" }  %></td>
+        </tr>
+      <% else %>
+      <% end %>
     <% end %>
   </tbody>
 </table>
