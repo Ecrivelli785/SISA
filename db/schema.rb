@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_02_15_235925) do
-=======
-ActiveRecord::Schema.define(version: 2020_02_15_202958) do
->>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,8 +29,8 @@ ActiveRecord::Schema.define(version: 2020_02_15_202958) do
     t.time "hora_aplicacion"
     t.date "proximo_tratamiento"
     t.integer "id_cliente"
-    t.date "created_at", null: false
-    t.date "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.integer "id_rubro"
     t.integer "id_tratamiento"
     t.integer "id_vector"
@@ -63,8 +59,8 @@ ActiveRecord::Schema.define(version: 2020_02_15_202958) do
     t.string "barrio"
     t.boolean "estado"
     t.string "estado_mkt"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.string "cuit"
     t.string "correo"
     t.string "observaciones_cliente"
@@ -81,8 +77,8 @@ ActiveRecord::Schema.define(version: 2020_02_15_202958) do
 
   create_table "rubros", force: :cascade do |t|
     t.string "descripcion_tr"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "tecnicos", force: :cascade do |t|
