@@ -1,4 +1,4 @@
-<%= simple_form_for(@certificado, @rubro) do |f,r| %>
+<%= simple_form_for(@certificado) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -28,11 +28,6 @@
           </div>
      </div>    
   </div>
-   <%= f.select(:project_id, Project.all.collect {|r| [r.name, r.id]},  {prompt: "Select"}, {class: 'form-control'}) %>
-    
-
-    <%= f.input :observaciones_certificado %>
-
   <div class="form-actions">
     <%= f.button :submit %>
   </div>

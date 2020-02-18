@@ -53,11 +53,11 @@ class CertificadosController < ApplicationController
 
   # DELETE /certificados/1
   # DELETE /certificados/1.json
-  # BAJA LOGICA DE CERTIFICADO
+  # BAJA LOGICA DE CERTFICADO, NO ELIMINA EL REGISTRO DE LA BD SINO QUE CAMBIA EL ESTADO A FALSE 
   def destroy
-    @certificado.destroy
+    @certificado.update estado: false
     respond_to do |format|
-      format.html { redirect_to certificados_url, notice: 'Certificado was successfully destroyed.' }
+      format.html { redirect_to certificados_url, notice: 'El Certificado fue eliminado' }
       format.json { head :no_content }
     end
   end

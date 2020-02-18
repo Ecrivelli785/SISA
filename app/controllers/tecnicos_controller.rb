@@ -54,7 +54,7 @@ class TecnicosController < ApplicationController
   # DELETE /tecnicos/1
   # DELETE /tecnicos/1.json
   def destroy
-    @tecnico.destroy
+    @tecnico.update estado: false
     respond_to do |format|
       format.html { redirect_to tecnicos_url, notice: 'Tecnico was successfully destroyed.' }
       format.json { head :no_content }
