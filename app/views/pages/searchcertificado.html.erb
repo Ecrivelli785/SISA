@@ -1,5 +1,6 @@
 
 <h3>Resultados encontrados</h3>
+<div calss="container" style="overflow-y: scroll; height:400px; overflow-x: scroll; width:1000px">
  <table>
  <thead>
     <tr>
@@ -20,7 +21,7 @@
   </thead>
 
   <tbody>
-    <% @results_c.each do |result| %>
+    <% @results.each do |result| %>
       <tr>
         <td><%= result.nro_certificado %></td>
         <td><%= result.id_rubro %></td>
@@ -33,10 +34,10 @@
         <td><%= result.hora_aplicacion %></td>
         <td><%= result.codigo %></td>
         <td><%= result.id_cliente %></td>
-        <td><%= button_to  'Detalle', certificado, method: :get %></td>
-        <td><%= button_to  'Editar', edit_certificado_path(certificado),method: :get %></td>
-        <td><%= button_to 'Eliminar', certificado_path(certificado),method: :delete, data: { confirm: "Estás seguro?" }  %></td>
+         <td><%= button_to  'Detalle', result, method: :get %></td>
+        <td><%= button_to 'Eliminar', certificado_path(result),method: :delete, data: { confirm: "Estás seguro?" }  %></td>
         </tr>
     <% end %>
   </tbody>
 </table>
+</div>

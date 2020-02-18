@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :clientes
   get '/search' => 'pages#search', :as => 'search_page'
   get '/searchcertificado' => 'pages#searchcertificado', :as => 'searchcertificado_page'
+  get '/searchtecnico' => 'pages#searchtecnico', :as => 'searchtecnico_page'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

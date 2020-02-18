@@ -1,5 +1,7 @@
 
 <h3>Resultados encontrados</h3>
+
+<div calss="container" style="overflow-y: scroll; height:400px; overflow-x: scroll; width:1000px">
  <table>
  <thead>
     <tr>
@@ -17,9 +19,9 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @results.each do |result| %>
-      <tr>
+    <tbody>
+      <% @results.each do |result| %>
+        <tr>
         <td><%= result.apellido %></td>
         <td><%= result.nombre %></td>
         <td><%= result.domicilio %></td>
@@ -30,7 +32,9 @@
         <td><%= result.id_tipo_cliente %></td>
         <td><%= result.cuit %></td>
         <td><%= result.correo %></td>
-        <td><%= link_to 'Detalle', result %></td>
-    <% end %>
-  </tbody>
-</table>
+        <td><%= button_to  'Detalle', result, method: :get %></td>
+        <td><%= button_to 'Eliminar', cliente_path(result),method: :delete, data: { confirm: "Estás seguro?" }  %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

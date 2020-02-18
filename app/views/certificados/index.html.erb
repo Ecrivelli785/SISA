@@ -29,7 +29,6 @@
       <th>Fecha vencimiento</th>
       <th>Hora aplicacion</th>
       <th>Codigo</th>
-      <th>Id cliente</th>
       <th>Cliente</th>
       <th colspan="3"></th>
     </tr>
@@ -37,26 +36,22 @@
 
   <tbody>
     <% @certificados.each do |certificado| %>
-      <%if certificado.estado == true %>
-        <tr>
-          <td><%= certificado.id %></td>
-          <td><%= certificado.nro_certificado %></td>
-          <td><%= certificado.id_rubro %></td>
-          <td><%= certificado.id_tratamiento %></td>
-          <td><%= certificado.id_vector %></td>
-          <td><%= certificado.superficie%></td>
-          <td><%= certificado.id_drogas %></td>
-          <td><%= certificado.fecha_aplicacion %></td>
-          <td><%= certificado.fecha_vencimiento %></td>
-          <td><%= certificado.hora_aplicacion %></td>
-          <td><%= certificado.codigo %></td>
-          <td><%= certificado.id_cliente %></td>
-          <td><%= button_to  'Detalle', certificado, method: :get %></td>
-          <td><%= button_to  'Editar', edit_certificado_path(certificado),method: :get %></td>
-          <td><%= button_to'Eliminar',certificado_path(certificado),method: :delete, data: {confirm:"Estás seguro?" }%></td>
-        </tr>
-      <% else %>
-      <% end %>
+<<<<<<< HEAD
+      <tr>
+        <td><%= certificado.nro_certificado %></td>
+        <td><%= certificado.id_rubro %></td>
+        <td><%= certificado.id_tratamiento %></td>
+        <td><%= certificado.id_vector %></td>
+        <td><%= certificado.superficie%></td>
+        <td><%= certificado.id_drogas %></td>
+        <td><%= certificado.fecha_aplicacion %></td>
+        <td><%= certificado.fecha_vencimiento %></td>
+        <td><%= certificado.hora_aplicacion %></td>
+        <td><%= certificado.codigo %></td>
+        <td><%= certificado.cliente.try(:nombre)%></td>
+        <td><%= button_to  'Detalle', certificado, method: :get %></td>
+        <td><%= button_to 'Eliminar', certificado_path(certificado),method: :delete, data: { confirm: "Estás seguro?" }  %></td>
+      </tr>
     <% end %>
   </tbody>
 </div>

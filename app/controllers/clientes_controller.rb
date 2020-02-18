@@ -24,7 +24,7 @@ class ClientesController < ApplicationController
 
   def union_cr
     @union_cr = Clientes.joins(:rubros).all
-    
+
   end
 
 
@@ -60,14 +60,13 @@ class ClientesController < ApplicationController
 
   # DELETE /clientes/1
   # DELETE /clientes/1.json
-  # BAJA LOGICA DE CLIENTE, NO ELIMINA EL REGISTRO DE LA BD SINO QUE CAMBIA EL ESTADO A FALSE 
+  # BAJA LOGICA DE CLIENTE, NO ELIMINA EL REGISTRO DE LA BD SINO QUE CAMBIA EL ESTADO A FALSE
   def destroy
     @cliente.update estado: false
       respond_to do |format|
       format.html { redirect_to clientes_url, notice: 'El cliente fue eliminado'}
       format.json { head :no_content}
     end
-    
   end
 
   private
@@ -80,5 +79,5 @@ class ClientesController < ApplicationController
     def cliente_params
       params.require(:cliente).permit(:apellido, :nombre, :domicilio, :telefono, :celular, :barrio, :estado, :id_rubro, :cuit, :correo)
     end
-  
+
 end
