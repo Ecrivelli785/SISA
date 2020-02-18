@@ -43,6 +43,13 @@ ActiveRecord::Schema.define(version: 2020_02_15_235925) do
     t.integer "id_tecnico"
   end
 
+  create_table "cliente_certificados", force: :cascade do |t|
+    t.integer "cliente_id"
+    t.integer "certificado_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "clientes", force: :cascade do |t|
     t.integer "id_cliente"
     t.string "apellido"
