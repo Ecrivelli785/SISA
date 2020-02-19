@@ -5,8 +5,9 @@ body {
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px; }
+  font-size: 15px;
+  line-height: 18px;
+  color: rgba(0,0,0,1) }
 
 pre {
   background-color: #eee;
@@ -36,7 +37,8 @@ div.actions {
   margin-bottom: 10px; }
 
 #notice {
-  color: green; }
+  color: green;
+  font-size: 20px}
 
 .field_with_errors {
   padding: 2px;

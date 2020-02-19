@@ -5,12 +5,21 @@ class CertificadosController < ApplicationController
   # GET /certificados.json
   def index
     @certificados = Certificado.all
-    # Certificados.joins(:tipos_clientes, :tratamientos, :vectores, :drogas)
+       respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template: 'certificados/pdf', pdf: 'Reporte' }
+    end
   end
 
   # GET /certificados/1
   # GET /certificados/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template: 'certificados/pdf', pdf: 'Reporte' }
+    end
   end
 
   # GET /certificados/new
@@ -67,6 +76,9 @@ class CertificadosController < ApplicationController
     @certificados_c = Certificado.joins(:cliente)
   end
 
+  def printcertificado
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_certificado
@@ -75,6 +87,6 @@ class CertificadosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def certificado_params
-      params.require(:certificado).permit(:id, :nro_certificado, :id_rubro, :id_tratamiento, :id_vector, :superficie, :fecha_aplicacion, :fecha_vencimiento, :hora_aplicacion, :proximo_tratamiento, :estado, :observaciones_certificado, :codigo, :id_cliente, :id_drogas, :cliente_id, cliente_attributes: [:cliente_id, :id_cliente, :apellido, :nombre, :domicilio, :telefono, :celular, :barrio, :estado, :id_rubro, :cuit, :correo])
+      params.require(:certificado).permit(:id, :nro_certificado, :id_rubro, :id_tratamiento, :id_vector, :superficie, :fecha_aplicacion, :fecha_vencimiento, :hora_aplicacion, :proximo_tratamiento, :estado, :observaciones_certificado, :codigo, :id_cliente, :id_drogas, cliente_attributes: [:cliente_id, :apellido, :nombre, :domicilio, :telefono, :celular, :barrio, :estado, :id_rubro, :cuit, :correo])
     end
 end
