@@ -5,7 +5,7 @@ class CertificadosController < ApplicationController
   # GET /certificados.json
   def index
     @certificados = Certificado.all
-       respond_to do |format|
+    respond_to do |format|
       format.html
       format.json
       format.pdf {render template: 'certificados/pdf', pdf: 'Reporte' }
@@ -87,6 +87,6 @@ class CertificadosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def certificado_params
-      params.require(:certificado).permit(:id, :nro_certificado, :id_rubro, :id_tratamiento, :id_vector, :superficie, :fecha_aplicacion, :fecha_vencimiento, :hora_aplicacion, :proximo_tratamiento, :estado, :observaciones_certificado, :codigo, :id_cliente, :id_drogas, cliente_attributes: [:cliente_id, :apellido, :nombre, :domicilio, :telefono, :celular, :barrio, :estado, :id_rubro, :cuit, :correo])
+      params.require(:certificado).permit(:id, :nro_certificado, :id_rubro, :id_tratamiento, :id_vector, :vector_tipo, :superficie, :fecha_aplicacion, :fecha_vencimiento, :hora_aplicacion, :proximo_tratamiento, :estado, :observaciones_certificado, :codigo, :droga_tipo, :tratamiento_tipo, :id_cliente, cliente_attributes: [:cliente_id, :apellido, :client_type, :nombre, :domicilio, :telefono, :celular, :barrio, :estado, :id_rubro, :cuit, :correo])
     end
 end

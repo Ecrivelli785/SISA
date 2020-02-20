@@ -1,71 +1,54 @@
 <p id="notice"><%= notice %></p>
 
+<div class="d-flex justify-content-between">
+  <div>
+    <h1>Detalles del certificado</h1>
+  </div>
+  <div>
+    <%= link_to 'Atrás',  certificados_path, class: 'btn btn-success btn-cliente' %>
+  </div>
+</div>
 
-<p>
-  <strong>Nro certificado:</strong>
-  <%= @certificado.nro_certificado %>
-</p>
+<div class="container" style="overflow-y: scroll; overflow-x: scroll; width:1000px">
+<table>
+  <thead>
+    <th><strong>Nro certificado:</strong></th>
+    <th><strong>Nombre:</strong></th>
+    <th><strong>Apellido:</strong></th>
+    <th><strong>Rubro:</strong></th>
+    <th><strong>Tratamiento:</strong></th>
+    <th><strong>Vectores:</strong></th>
+    <th><strong>Superficie:</strong></th>
+    <th><strong>Veneno:</strong></th>
+    <th><strong>Fecha aplicacion:</strong></th>
+    <th><strong>Fecha vencimiento:</strong></th>
+    <th><strong>Hora aplicacion:</strong></th>
+    <th><strong>Proximo tratamiento:</strong></th>
+    <th><strong>Codigo:</strong></th>
+    <th><strong>Id cliente:</strong></th>
+</thead>
 
-<p>
-  <strong>Rubro:</strong>
-  <%= @certificado.id_rubro %>
-</p>
-
-<p>
-  <strong>Tratamiento:</strong>
-  <%= @certificado.id_tratamiento %>
-</p>
-
-<p>
-  <strong>Vectores:</strong>
-  <%= @certificado.id_vector %>
-</p>
-
-<p>
-  <strong>Superficie:</strong>
-  <%= @certificado.superficie%>
-</p>
-
-<p>
-  <strong>Veneno:</strong>
-  <%= @certificado.id_drogas %>
-</p>
-
-
-<p>
-  <strong>Fecha aplicacion:</strong>
-  <%= @certificado.fecha_aplicacion %>
-</p>
-
-<p>
-  <strong>Fecha vencimiento:</strong>
-  <%= @certificado.fecha_vencimiento %>
-</p>
-
-<p>
-  <strong>Hora aplicacion:</strong>
-  <%= @certificado.hora_aplicacion %>
-</p>
-
-<p>
-  <strong>Proximo tratamiento:</strong>
-  <%= @certificado.proximo_tratamiento %>
-</p>
-
-
-<p>
-  <strong>Codigo:</strong>
-  <%= @certificado.codigo %>
-</p>
-
-<p>
-  <strong>Id cliente:</strong>
-  <%= @certificado.id_cliente %>
-</p>
-
-
+  <tbody>
+    <td> <%= @certificado.nro_certificado %></td>
+    <td> <%= @certificado.cliente.nombre %></td>
+    <td> <%= @certificado.cliente.apellido %></td>
+    <td> <%= @certificado.id_rubro %></td>
+    <td> <%= @certificado.id_tratamiento %></td>
+    <td> <%= @certificado.id_vector %></td>
+    <td> <%= @certificado.superficie%></td>
+    <td> <%= @certificado.id_drogas %></td>
+    <td> <%= @certificado.fecha_aplicacion %></td>
+    <td> <%= @certificado.fecha_vencimiento %></td>
+    <td> <%= @certificado.hora_aplicacion.strftime("%l:%M %p")  %></td>
+    <td> <%= @certificado.proximo_tratamiento %></td>
+    <td> <%= @certificado.codigo %></td>
+  </tbody>
+</table>
+</div>
+<br>
+<br>
+<br>
 <div class="d-flex bd-highlight mb-3">
   <div class="p-2 bd-highlight"><%= button_to  'Editar', edit_certificado_path(@certificado),method: :get %></div>
-  <div class="p-2 bd-highlight">  <%= button_to 'Back', certificados_path(@certificado), method: :get %></div>
   <div class="p-2 bd-highlight"><%= button_to "Imprimir Certificado", certificados_path(format: :pdf), class: 'btn-u', method: :get, :form => {"data-type" => "pdf" } %></div>
 </div>
