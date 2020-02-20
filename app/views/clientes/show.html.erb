@@ -52,5 +52,5 @@
 
 <div class="d-flex bd-highlight mb-3">
   <div class="p-2 bd-highlight"><%= button_to  'Editar', edit_cliente_path(@cliente),method: :get %></div>
-  <div class=" bd-highlight btn btn-success btn-sm">  <%= link_to 'Back', clientes_path %></div>
+  <div class="p-2 bd-highlight">  <%= button_to 'Back', clientes_path(@cliente), method: :get %></div>
 </div>

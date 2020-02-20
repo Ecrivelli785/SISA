@@ -66,5 +66,6 @@
 
 <div class="d-flex bd-highlight mb-3">
   <div class="p-2 bd-highlight"><%= button_to  'Editar', edit_certificado_path(@certificado),method: :get %></div>
-  <div class=" bd-highlight btn btn-success btn-sm">  <%= link_to 'Back', certificado_path %></div>
+  <div class="p-2 bd-highlight">  <%= button_to 'Back', certificados_path(@certificado), method: :get %></div>
+  <div class="p-2 bd-highlight"><%= button_to "Imprimir Certificado", certificados_path(format: :pdf), class: 'btn-u', method: :get, :form => {"data-type" => "pdf" } %></div>
 </div>

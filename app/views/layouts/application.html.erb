@@ -8,6 +8,8 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%=  javascript_tag "application", "data-turbolinks-track" => true  %>
+    <%= wicked_pdf_stylesheet_link_tag %>
+    <%= wicked_pdf_javascript_include_tag %>
         <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -39,10 +41,13 @@
           <a href="/calendario">Calendario</a>
         </li>
         <li>
-          <a href="#">Prox. Fumigaciones</a>
+          <a href="/proximas_fumigaciones">Prox. Fumigaciones</a>
         </li>
         <li>
           <a href="/tecnicos">Fumigadores</a>
+        </li>
+        <li>
+          <a href="/reportes">Reportes</a>
         </li>
         <!--     Menu dentro de otros menú, por el momento no es necesario pero dejo escrito el código    <li>
           <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Page</a>

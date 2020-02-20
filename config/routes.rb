@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :tecnicos
   resources :certificados
   resources :clientes
+  get 'proximas_fumigaciones', to: 'pages#proximas_fumigaciones', as: :proximas_fumigaciones
+  get 'reportes', to: 'pages#reportes', as: :reportes
   get '/search' => 'pages#search', :as => 'search_page'
   get '/searchcertificado' => 'pages#searchcertificado', :as => 'searchcertificado_page'
   get '/searchtecnico' => 'pages#searchtecnico', :as => 'searchtecnico_page'

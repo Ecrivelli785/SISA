@@ -5,13 +5,25 @@ class CertificadosController < ApplicationController
   # GET /certificados.json
   def index
     @certificados = Certificado.all
-    # Certificados.joins(:tipos_clientes, :tratamientos, :vectores, :drogas)
+       respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template: 'certificados/pdf', pdf: 'Reporte' }
+    end
   end
 
 ​  # GET /certificados/1
   # GET /certificados/1.json
   def show
+<<<<<<< HEAD
     @certificado = Certificado.find(params[:id])
+=======
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template: 'certificados/pdf', pdf: 'Reporte' }
+    end
+>>>>>>> e5c09660d087370103226a4c751df43887a03644
   end
 
   # GET /certificados/new
@@ -68,7 +80,10 @@ class CertificadosController < ApplicationController
     @certificados_c = Certificado.joins(:cliente)
   end
 
-​  private
+  def printcertificado
+  end
+
+  private
     # Use callbacks to share common setup or constraints between actions.
     def set_certificado
       @certificado = Certificado.find(params[:id])

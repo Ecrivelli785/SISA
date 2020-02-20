@@ -25,6 +25,7 @@ class PagesController < ApplicationController
     end
   end
 
+
   def searchtecnico
     if params[:search].blank?
       redirect_to(tecnicos_path, alert: "Empty field!") and return
@@ -35,4 +36,4 @@ class PagesController < ApplicationController
 end
 end
 
-users.where(users[:id].matches(str)).to_sql #=> "SELECT FROM `users`  WHERE `users`.`id` LIKE 'foo'"
+# users.where(users[:id].matches(str)).to_sql #=> "SELECT FROM `users`  WHERE `users`.`id` LIKE 'foo'"
