@@ -15,15 +15,11 @@ class CertificadosController < ApplicationController
 ​  # GET /certificados/1
   # GET /certificados/1.json
   def show
-<<<<<<< HEAD
-    @certificado = Certificado.find(params[:id])
-=======
     respond_to do |format|
       format.html
       format.json
       format.pdf {render template: 'certificados/pdf', pdf: 'Reporte' }
     end
->>>>>>> e5c09660d087370103226a4c751df43887a03644
   end
 
   # GET /certificados/new
