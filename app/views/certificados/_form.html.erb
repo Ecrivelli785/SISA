@@ -5,16 +5,16 @@
   <div class="form-inputs container certificado-edit">
     <%= f.input :nro_certificado %>
     <%= f.input :id_rubro %>
-    <%= f.input :id_tratamiento %>
-    <%= f.input :id_vector %>
+    <%= f.input :tratamiento_tipo, as: :radio_buttons, collection: Certificado::TRATAMIENTO_TIPO, wrapper: :vertical_collection_inline, label:'Tipo Tratamiento'%>
+    <%= f.input :vector_tipo, as: :radio_buttons, collection: Certificado::VECTOR_TIPO, wrapper: :vertical_collection_inline, label:'Tipo Vector'%>
     <%= f.input :superficie %>
     <%= f.input :id_drogas %>
+    <%= f.input :droga_tipo, as: :radio_buttons, collection: Certificado::DROGA_TIPO, wrapper: :vertical_collection_inline, label:'Tipo Droga'%>
     <%= f.input :fecha_aplicacion %>
     <%= f.input :fecha_vencimiento %>
     <%= f.input :hora_aplicacion %>
     <%= f.input :proximo_tratamiento %>
     <%= f.input :codigo %>
-    <%= f.input :id_cliente %>
   </div>
   <div class="form-actions">
     <%= f.button :submit %>
