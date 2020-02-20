@@ -39,13 +39,13 @@
         <td><%= certificado.id_rubro %></td>
         <td><%= certificado.id_tratamiento %></td>
         <td><%= certificado.id_vector %></td>
-        <td><%= certificado.superficie%></td>
+        <td><%= certificado.superficie %></td>
         <td><%= certificado.id_drogas %></td>
         <td><%= certificado.fecha_aplicacion %></td>
         <td><%= certificado.fecha_vencimiento %></td>
         <td><%= certificado.hora_aplicacion %></td>
         <td><%= certificado.codigo %></td>
-        <td><%= certificado.cliente.nombre%></td>
+        <td><%= certificado.cliente.nombre %></td>
         <td><%= button_to  'Detalle', certificado, method: :get %></td>
         <td><%= button_to 'Eliminar', certificado_path(certificado),method: :delete, data: { confirm: "Estás seguro?" }  %></td>
       </tr>

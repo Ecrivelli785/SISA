@@ -5,13 +5,13 @@ class CertificadosController < ApplicationController
   # GET /certificados.json
   def index
     @certificados = Certificado.all
-
+    # Certificados.joins(:tipos_clientes, :tratamientos, :vectores, :drogas)
   end
 
-  # GET /certificados/1
+​  # GET /certificados/1
   # GET /certificados/1.json
   def show
-
+    @certificado = Certificado.find(params[:id])
   end
 
   # GET /certificados/new
@@ -23,7 +23,7 @@ class CertificadosController < ApplicationController
   def edit
   end
 
-  # POST /certificados
+​  # POST /certificados
   # POST /certificados.json
   def create
     @certificado = Certificado.new(certificado_params)
@@ -39,7 +39,7 @@ class CertificadosController < ApplicationController
     end
   end
 
-  # PATCH/PUT /certificados/1
+​  # PATCH/PUT /certificados/1
   # PATCH/PUT /certificados/1.json
   def update
     respond_to do |format|
@@ -53,9 +53,9 @@ class CertificadosController < ApplicationController
     end
   end
 
-  # DELETE /certificados/1
+​  # DELETE /certificados/1
   # DELETE /certificados/1.json
-  # BAJA LOGICA DE CERTFICADO, NO ELIMINA EL REGISTRO DE LA BD SINO QUE CAMBIA EL ESTADO A FALSE 
+  # BAJA LOGICA DE CERTFICADO, NO ELIMINA EL REGISTRO DE LA BD SINO QUE CAMBIA EL ESTADO A FALSE
   def destroy
     @certificado.update estado: false
     respond_to do |format|
@@ -64,17 +64,17 @@ class CertificadosController < ApplicationController
     end
   end
 
-  def join_cc
+​  def join_cc
     @certificados_c = Certificado.joins(:cliente)
   end
 
-  private
+​  private
     # Use callbacks to share common setup or constraints between actions.
     def set_certificado
       @certificado = Certificado.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+​    # Never trust parameters from the scary internet, only allow the white list through.
     def certificado_params
       params.require(:certificado).permit(:id, :nro_certificado, :id_rubro, :id_tratamiento, :id_vector, :superficie, :fecha_aplicacion, :fecha_vencimiento, :hora_aplicacion, :proximo_tratamiento, :estado, :observaciones_certificado, :codigo, :id_cliente, :id_drogas, cliente_attributes: [:cliente_id, :apellido, :nombre, :domicilio, :telefono, :celular, :barrio, :estado, :id_rubro, :cuit, :correo])
     end
