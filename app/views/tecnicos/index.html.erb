@@ -1,5 +1,3 @@
-
-
 <div class="col-9">
 <p id="notice"><%= notice %></p>
 
@@ -17,9 +15,8 @@
   </div>
 <% end %>
 
-  <div calss="container" style="overflow-y: scroll; height:400px; overflow-x: scroll; width:800px">
-<table>
-<<<<<<< HEAD
+<div calss="container" style="overflow-y: scroll; height:400px; overflow-x: scroll; width:800px">
+  <table>
     <thead>
       <tr>
         <th>Dni</th>
@@ -30,40 +27,6 @@
         <th colspan="3"></th>
       </tr>
     </thead>
-=======
-  <thead>
-    <tr>
-      <th>Dni</th>
-      <th>Apellido</th>
-      <th>Nombre</th>
-      <th>Domicilio</th>
-      <th>Telefono</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tecnicos.each do |tecnico| %>
-      <%if tecnico.estado == true %>
-        <tr>
-          <td><%= tecnico.dni %></td>
-          <td><%= tecnico.apellido %></td>
-          <td><%= tecnico.nombre %></td>
-          <td><%= tecnico.domicilio %></td>
-          <td><%= tecnico.telefono %></td>
-          <td><%= button_to  'Detalle', tecnico, method: :get %></td>
-          <td><%= button_to  'Editar', edit_tecnico_path(tecnico),method: :get %></td>
-          <td><%= button_to 'Eliminar', tecnico_path(tecnico),method: :delete, data: { confirm: "Estás seguro?" }  %></td>
-        </tr>
-      <% else %>
-      <% end %>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
->>>>>>> master
-
     <tbody>
       <% @tecnicos.each do |tecnico| %>
         <tr>
@@ -78,5 +41,4 @@
       <% end %>
     </tbody>
 </table>
-  </div>
 </div>

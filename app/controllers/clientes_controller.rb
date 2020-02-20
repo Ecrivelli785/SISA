@@ -10,7 +10,6 @@ class ClientesController < ApplicationController
   # GET /clientes/1
   # GET /clientes/1.json
   def show
-     @clientes = Cliente.find(params[:id])
   end
 
   # GET /clientes/new
@@ -32,6 +31,7 @@ class ClientesController < ApplicationController
   # POST /clientes.json
   def create
     @cliente = Cliente.new(cliente_params)
+    @cliente.update estado: true
 
     respond_to do |format|
       if @cliente.save
