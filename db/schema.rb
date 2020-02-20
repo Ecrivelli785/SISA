@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_02_20_200125) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "id_rubro"
     t.integer "id_tratamiento"
-    t.integer "id_vector"
+      t.integer "id_vector"
     t.string "superficie"
     t.integer "id_drogas"
     t.string "codigo"

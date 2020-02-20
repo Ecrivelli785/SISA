@@ -4,11 +4,9 @@
 
   <div class="form-inputs container certificado-edit">
     <%= f.input :nro_certificado %>
-    <%= f.input :id_rubro %>
     <%= f.input :tratamiento_tipo, as: :radio_buttons, collection: Certificado::TRATAMIENTO_TIPO, wrapper: :vertical_collection_inline, label:'Tipo Tratamiento'%>
     <%= f.input :vector_tipo, as: :radio_buttons, collection: Certificado::VECTOR_TIPO, wrapper: :vertical_collection_inline, label:'Tipo Vector'%>
     <%= f.input :superficie %>
-    <%= f.input :id_drogas %>
     <%= f.input :droga_tipo, as: :radio_buttons, collection: Certificado::DROGA_TIPO, wrapper: :vertical_collection_inline, label:'Tipo Droga'%>
     <%= f.input :fecha_aplicacion %>
     <%= f.input :fecha_vencimiento %>

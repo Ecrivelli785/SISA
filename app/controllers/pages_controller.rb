@@ -21,7 +21,7 @@ class PagesController < ApplicationController
       redirect_to(certificados_path, alert: "Empty field!") and return
     else
     @parameter = params[:search].downcase
-    @results = Certificado.all.where("lower(superficie) LIKE :search", search: "%#{@parameter}%")
+    @results = Certificado.all.where("lower(superficie) LIKE :search OR lower(vector_tipo) LIKE :search OR lower(tratamiento_tipo) LIKE :search OR lower(droga_tipo) LIKE :search OR lower(codigo) LIKE :search", search: "%#{@parameter}%")
     end
   end
 
