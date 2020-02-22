@@ -5,14 +5,13 @@
 
   <div class="form-inputs cliente-new-form">
     <%= f.input :apellido %>
-    <%= f.input :id_cliente %>
     <%= f.input :nombre %>
     <%= f.input :domicilio %>
+    <%= f.input :client_type, as: :radio_buttons, collection: Cliente::CLIENT_TYPE, wrapper: :vertical_collection_inline, label:'Tipo Cliente'%>
     <%= f.input :telefono %>
     <%= f.input :celular %>
     <%= f.input :barrio %>
     <%= f.input :id_rubro %>
-    <%= f.input :id_tipo_cliente %>
     <%= f.input :cuit %>
     <%= f.input :correo %>
   </div>

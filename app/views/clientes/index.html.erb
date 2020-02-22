@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<div class="container">
 <div class="d-flex justify-content-between">
   <div>
     <h1>Clientes</h1>
@@ -43,7 +44,7 @@
           <td><%= cliente.celular %></td>
           <td><%= cliente.barrio %></td>
           <td><%= cliente.id_rubro %></td>
-          <td><%= cliente.id_tipo_cliente %></td>
+          <td><%= cliente.client_type %></td>
           <td><%= cliente.cuit %></td>
           <td><%= cliente.correo %></td>
           <td><%= button_to  'Detalle', cliente, method: :get %></td>
@@ -54,5 +55,5 @@
     </tbody>
   </table>
 </div>
-
+</div>
 
