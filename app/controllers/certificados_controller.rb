@@ -37,7 +37,7 @@ class CertificadosController < ApplicationController
     @certificado = Certificado.new(certificado_params)
 
     respond_to do |format|
-      if @certificado.save
+      if @certificado.save!
         format.html { redirect_to @certificado, notice: 'Certificado was successfully created.' }
         format.json { render :show, status: :created, location: @certificado }
       else
@@ -87,6 +87,6 @@ class CertificadosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def certificado_params
-      params.require(:certificado).permit(:id, :nro_certificado, :id_rubro, :id_tratamiento, :id_vector, :vector_tipo, :superficie, :fecha_aplicacion, :fecha_vencimiento, :hora_aplicacion, :proximo_tratamiento, :estado, :observaciones_certificado, :codigo, :droga_tipo, :tratamiento_tipo, :id_cliente, cliente_attributes: [:cliente_id, :apellido, :client_type, :nombre, :domicilio, :telefono, :celular, :barrio, :estado, :id_rubro, :cuit, :correo])
+      params.require(:certificado).permit(:id, :nro_certificado, :id_rubro, :id_tratamiento, :id_vector, :vector_tipo, :superficie, :fecha_aplicacion, :fecha_vencimiento, :hora_aplicacion, :proximo_tratamiento, :estado, :observaciones_certificado, :codigo, :droga_tipo, :tratamiento_tipo, :id_cliente, :cliente_id, cliente_attributes: [:cliente_id, :apellido, :client_type, :nombre, :domicilio, :telefono, :celular, :barrio, :estado, :id_rubro, :cuit, :correo])
     end
 end

@@ -14,3 +14,9 @@
  *= require_self
  */
 @import "bootstrap/scss/bootstrap";
+
+.container-gral {
+  width: 100%;
+  padding-left: none;
+  padding-right: none;
+}
