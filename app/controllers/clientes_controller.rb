@@ -36,6 +36,11 @@ class ClientesController < ApplicationController
 
     respond_to do |format|
       if @cliente.save
+        @last_cliente = Cliente.last
+        @last_cliente.id = @last_cliente.id
+        @cliente.update cliente_id: @last_cliente.id
+
+        print @last_cliente.id
         format.html { redirect_to @cliente, notice: 'El cliente fue creado.' }
         format.json { render :show, status: :created, location: @cliente }
       else
@@ -78,7 +83,7 @@ class ClientesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cliente_params
-      params.require(:cliente).permit(:apellido, :nombre, :client_type, :domicilio, :telefono, :celular, :barrio, :estado, :id_rubro, :cuit, :correo, :certificado_attributes[:cliente_id])
+      params.require(:cliente).permit(:apellido, :nombre, :cliente_id, :client_type, :domicilio, :telefono, :celular, :barrio, :estado, :id_rubro, :cuit, :correo)
     end
 
 end

@@ -9,7 +9,7 @@
       <div><%= f.input :superficie %></div>
       <div><%= f.input :codigo %></div>
     </div>
-    <%= f.association :cliente, as: :search, data:{autocomplete_source: cliente_path(@cliente_id)} %>
+    <%= f.association :cliente, as: :search, data:{autocomplete_source: @cliente[Cliente.cliente_id]} %>
     <%= f.input :droga_tipo, as: :radio_buttons, collection: Certificado::DROGA_TIPO, wrapper: :vertical_collection_inline, label:'Tipo Droga'%>
     <%= f.input :tratamiento_tipo, as: :radio_buttons, collection: Certificado::TRATAMIENTO_TIPO, wrapper: :vertical_collection_inline, label:'Tipo Tratamiento'%>
     <%= f.input :vector_tipo, as: :radio_buttons, collection: Certificado::VECTOR_TIPO, wrapper: :vertical_collection_inline, label:'Tipo Vector'%>

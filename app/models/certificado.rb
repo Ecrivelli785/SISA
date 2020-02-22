@@ -8,4 +8,5 @@ class Certificado < ApplicationRecord
   validates :droga_tipo, presence: true, inclusion: { in: DROGA_TIPO }
   validates :tratamiento_tipo, presence: true, inclusion: { in: TRATAMIENTO_TIPO }
   validates :vector_tipo, presence: true, inclusion: { in: VECTOR_TIPO }
+
 end
