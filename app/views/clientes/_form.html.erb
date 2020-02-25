@@ -14,6 +14,7 @@
     <%= f.input :id_rubro %>
     <%= f.input :cuit %>
     <%= f.input :correo %>
+    <%= f.hidden_field :cliente_id, value: @cliente.cliente_id%>
   </div>
     <%= f.button :submit, placeholder: "Crear" %>
   </div>

@@ -11,7 +11,7 @@ class CertificadosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get new_certificado_url
+    get new__cliente_certificado_url
     assert_response :success
   end
 

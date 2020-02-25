@@ -36,11 +36,10 @@ class ClientesController < ApplicationController
 
     respond_to do |format|
       if @cliente.save
-        @last_cliente = Cliente.last
-        @last_cliente.id = @last_cliente.id
-        @cliente.update cliente_id: @last_cliente.id
+        # @last_cliente = Cliente.last
+        # @last_cliente.id = @last_cliente.id
+        # @cliente.update cliente_id: @last_cliente.id
 
-        print @last_cliente.id
         format.html { redirect_to @cliente, notice: 'El cliente fue creado.' }
         format.json { render :show, status: :created, location: @cliente }
       else
@@ -50,6 +49,11 @@ class ClientesController < ApplicationController
     end
   end
 
+
+# def last_cliente.id
+#    @last_cliente = Cliente.last
+#    @last_cliente.id = @last_cliente.id
+# end
   # PATCH/PUT /clientes/1
   # PATCH/PUT /clientes/1.json
   def update

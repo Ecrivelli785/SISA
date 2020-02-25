@@ -1,7 +1,7 @@
 class Certificado < ApplicationRecord
   belongs_to :cliente
   has_one :droga
-  attr_accessor :id_cliente
+  attr_accessor :apellido, :nombre, :cliente_id, :client_type, :domicilio, :telefono, :celular, :barrio, :estado, :id_rubro, :cuit, :correo
   DROGA_TIPO = ['PIRETROYDES', 'BROMADILONE', 'OTROS']
   TRATAMIENTO_TIPO = ['ASPERSIÓN', 'HUMO', 'NIEBLA', 'OTROS']
   VECTOR_TIPO = ['INSECTO', 'ROEDORES', 'VOLADORES', 'BACTERIAS', 'OTROS']

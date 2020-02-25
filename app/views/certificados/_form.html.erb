@@ -1,5 +1,5 @@
 
-<%= simple_form_for(@certificado) do |f| %>
+<%= simple_form_for [@certificado, @cliente] do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -9,7 +9,7 @@
       <div><%= f.input :superficie %></div>
       <div><%= f.input :codigo %></div>
     </div>
-    <%= f.association :cliente, as: :search, data:{autocomplete_source: @cliente[Cliente.cliente_id]} %>
+    <%= f.hidden_field :cliente, value: @cliente.id %>
     <%= f.input :droga_tipo, as: :radio_buttons, collection: Certificado::DROGA_TIPO, wrapper: :vertical_collection_inline, label:'Tipo Droga'%>
     <%= f.input :tratamiento_tipo, as: :radio_buttons, collection: Certificado::TRATAMIENTO_TIPO, wrapper: :vertical_collection_inline, label:'Tipo Tratamiento'%>
     <%= f.input :vector_tipo, as: :radio_buttons, collection: Certificado::VECTOR_TIPO, wrapper: :vertical_collection_inline, label:'Tipo Vector'%>

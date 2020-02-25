@@ -4,7 +4,8 @@ class CertificadosController < ApplicationController
   # GET /certificados
   # GET /certificados.json
   def index
-    @certificados = Certificado.all
+    # @certificados = Certificado.all
+    @certificados = Certificado.joins(:cliente)
     respond_to do |format|
       format.html
       format.json
@@ -15,6 +16,7 @@ class CertificadosController < ApplicationController
   # GET /certificados/1
   # GET /certificados/1.json
   def show
+    @certificados = Certificado.joins(:cliente)
     respond_to do |format|
       format.html
       format.json
@@ -22,9 +24,10 @@ class CertificadosController < ApplicationController
     end
   end
 
-  # GET /certificados/new
+  # GET /cliente/certificados/new
   def new
     @certificado = Certificado.new
+    @certificados = Certificado.joins(:cliente)
   end
 
   # GET /certificados/1/edit
@@ -35,7 +38,7 @@ class CertificadosController < ApplicationController
   # POST /certificados.json
   def create
     @certificado = Certificado.new(certificado_params)
-
+    @certificados = Certificado.joins(:cliente)
     respond_to do |format|
       if @certificado.save!
         format.html { redirect_to @certificado, notice: 'Certificado was successfully created.' }
@@ -72,17 +75,17 @@ class CertificadosController < ApplicationController
     end
   end
 
-  def join_cc
-    @certificados_c = Certificado.joins(:cliente)
-  end
+
 
   def printcertificado
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_certificado
       @certificado = Certificado.find(params[:id])
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

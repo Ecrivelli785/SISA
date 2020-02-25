@@ -35,7 +35,7 @@
         <td><%= result.fecha_aplicacion  %></td>
         <td><%= result.hora_aplicacion.strftime("%l:%M %p") %></td>
         <td><%= result.codigo  %></td>
-        <td><%= result.id_cliente  %></td>
+        <td><%= result.id_cliente %></td>
          <td><%= button_to  'Detalle', result, method: :get %></td>
         <td><%= button_to 'Eliminar', certificado_path(result),method: :delete, data: { confirm: "Estás seguro?" }  %></td>
       </div>
