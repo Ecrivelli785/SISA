@@ -24,7 +24,12 @@ class CertificadosController < ApplicationController
 
   # GET /certificados/new
   def new
-    @certificado = Certificado.new
+    #@certificado = Certificado.new
+    @certificado = Certificado.new(:cliente_id => params[:cliente_id])
+    #respond_to do |format|
+    #  format.html 
+    #  format.json {render: json = @certificado}
+    #end
   end
 
   # GET /certificados/1/edit
@@ -72,9 +77,9 @@ class CertificadosController < ApplicationController
     end
   end
 
-​  def join_cc
-    @certificados_c = Certificado.joins(:cliente)
-  end
+​  #def join_cc
+  #  @certificados_c = Certificado.joins(:cliente)
+  #end
 
   def printcertificado
   end
@@ -83,10 +88,13 @@ class CertificadosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_certificado
       @certificado = Certificado.find(params[:id])
+      
+      #@cliente = Cliente.find(params[:cliente_id])
+
     end
 
 ​    # Never trust parameters from the scary internet, only allow the white list through.
     def certificado_params
-      params.require(:certificado).permit(:id, :nro_certificado, :id_rubro, :id_tratamiento, :id_vector, :vector_tipo, :superficie, :fecha_aplicacion, :fecha_vencimiento, :hora_aplicacion, :proximo_tratamiento, :estado, :observaciones_certificado, :codigo, :droga_tipo, :tratamiento_tipo, :id_cliente, :cliente_id, cliente_attributes: [:cliente_id, :apellido, :client_type, :nombre, :domicilio, :telefono, :celular, :barrio, :estado, :id_rubro, :cuit, :correo])
+      params.require(:certificado).permit(:id, :nro_certificado, :id_rubro, :id_tratamiento, :id_vector, :vector_tipo, :superficie, :fecha_aplicacion, :fecha_vencimiento, :hora_aplicacion, :proximo_tratamiento, :estado, :observaciones_certificado, :codigo, :droga_tipo, :tratamiento_tipo, :id_cliente, cliente_attributes: [:cliente_id, :apellido, :client_type, :nombre, :domicilio, :telefono, :celular, :barrio, :estado, :id_rubro, :cuit, :correo])
     end
 end

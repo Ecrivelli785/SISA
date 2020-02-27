@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 2020_02_22_123838) do
     t.time "hora_aplicacion"
     t.date "proximo_tratamiento"
     t.integer "id_cliente"
-    t.date "created_at", null: false
-    t.date "updated_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "id_rubro"
     t.integer "id_tratamiento"
     t.integer "id_vector"
@@ -42,9 +42,11 @@ ActiveRecord::Schema.define(version: 2020_02_22_123838) do
     t.integer "id_tecnico"
     t.boolean "estado"
     t.integer "cliente_id"
+    t.string "rubro"
     t.string "droga_tipo"
     t.string "tratamiento_tipo"
     t.string "vector_tipo"
+    t.index["nro_certificado"], name "index_certificados_on_nro_certificado"
   end
 
   create_table "clientes", force: :cascade do |t|
@@ -56,14 +58,15 @@ ActiveRecord::Schema.define(version: 2020_02_22_123838) do
     t.string "barrio"
     t.boolean "estado"
     t.string "estado_mkt"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.string "cuit"
     t.string "correo"
     t.string "observaciones_cliente"
     t.integer "id_tipo_cliente"
     t.integer "id_rubro"
     t.string "telefono"
+    t.string "rubro"
     t.string "client_type"
     t.integer "cliente_id"
   end
@@ -76,8 +79,8 @@ ActiveRecord::Schema.define(version: 2020_02_22_123838) do
 
   create_table "rubros", force: :cascade do |t|
     t.string "descripcion_tr"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "tecnicos", force: :cascade do |t|
