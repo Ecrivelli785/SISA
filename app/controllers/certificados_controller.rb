@@ -1,10 +1,10 @@
 class CertificadosController < ApplicationController
-  before_action :set_trace_func, only: [:show, :edit, :update, :destroy, :searchcertificado]
+  before_action :set_certificado, only: [:show, :edit, :update, :destroy, :searchcertificado]
 
   # GET /certificados
   # GET /certificados.json
   def index
-    @certificados = Certificado.all
+    @certificados = Certificado.all.order(:created_at)
   end
 
 ​  # GET /certificados/1
@@ -73,7 +73,7 @@ class CertificadosController < ApplicationController
 
 private
 
-  def set_trace_func
+  def set_certificado
     @certificado = Certificado.find(params[:id])
   end
 
