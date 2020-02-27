@@ -25,9 +25,9 @@ class CertificadosController < ApplicationController
   # GET /certificados/new
   def new
     #@certificado = Certificado.new
-    @certificado = Certificado.new(:cliente_id => params[:cliente_id])
+    @certificado = Certificado.new
     #respond_to do |format|
-    #  format.html 
+    #  format.html
     #  format.json {render: json = @certificado}
     #end
   end
@@ -88,9 +88,6 @@ class CertificadosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_certificado
       @certificado = Certificado.find(params[:id])
-      
-      #@cliente = Cliente.find(params[:cliente_id])
-
     end
 
 ​    # Never trust parameters from the scary internet, only allow the white list through.

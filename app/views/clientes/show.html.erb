@@ -59,7 +59,6 @@
 <div class="d-flex bd-highlight mb-3">
   <div class="p-2 bd-highlight"><%= button_to  'Editar', edit_cliente_path(@cliente),method: :get %></div>
   <div class="p-2 bd-highlight">  <%= button_to 'Back', clientes_path(@cliente), method: :get %></div>
-  <div class="p-2 bd-highlight"> <%= button_to 'Crear Certificado', new_certificado_path(@cliente)%></div>
-
+  <div class="p-2 bd-highlight"> <%= button_to 'Crear Certificado', new_certificado_path(@cliente.id)%></div>
 </div>
 </div>

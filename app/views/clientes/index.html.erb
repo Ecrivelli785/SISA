@@ -10,11 +10,10 @@
   </div>
 </div>
 
-<%= form_tag(search_page_path, :method => "get") der06o %>
+<%= form_tag(search_page_path, :method => "get") %>
   <div class="input-group my-3">
     <%= search_field_tag :search, params[:search], placeholder: "Buscar...", class: "form-control" %>
   </div>
-<%end%>
 
 <div calss="container" style="overflow-y: scroll; height:500px; overflow-x: scroll; width:1000px">
 <table>
