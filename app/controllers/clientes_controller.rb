@@ -10,7 +10,6 @@ class ClientesController < ApplicationController
   # GET /clientes/1
   # GET /clientes/1.json
   def show
-
   end
 
   # GET /clientes/new
@@ -24,7 +23,6 @@ class ClientesController < ApplicationController
 
   def union_cr
     @union_cr = Clientes.joins(:rubros).all
-
   end
 
   # POST /clientes
@@ -70,7 +68,7 @@ class ClientesController < ApplicationController
     @cliente.update estado: false
       respond_to do |format|
       format.html { redirect_to clientes_url, notice: 'El cliente fue eliminado'}
-      format.json { head :no_content}
+      format.json { head :no_content }
     end
   end
 
@@ -84,5 +82,4 @@ class ClientesController < ApplicationController
     def cliente_params
       params.require(:cliente).permit(:apellido, :nombre, :cliente_id, :client_type, :domicilio, :telefono, :celular, :barrio, :estado, :id_rubro, :cuit, :correo)
     end
-
 end

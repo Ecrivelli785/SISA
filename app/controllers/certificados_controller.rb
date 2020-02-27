@@ -1,20 +1,16 @@
 class CertificadosController < ApplicationController
-  before_action :set_certificado, only: [:show, :edit, :update, :destroy, :searchcertificado]
+  before_action :set_trace_func, only: [:show, :edit, :update, :destroy, :searchcertificado]
 
   # GET /certificados
   # GET /certificados.json
   def index
     @certificados = Certificado.all
-    respond_to do |format|
-      format.html
-      format.json
-      format.pdf {render template: 'certificados/pdf', pdf: 'Reporte' }
-    end
   end
 
 ​  # GET /certificados/1
   # GET /certificados/1.json
   def show
+    @certificado = Certificado.find(params[:id])
     respond_to do |format|
       format.html
       format.json
@@ -24,12 +20,7 @@ class CertificadosController < ApplicationController
 
   # GET /certificados/new
   def new
-    #@certificado = Certificado.new
     @certificado = Certificado.new
-    #respond_to do |format|
-    #  format.html
-    #  format.json {render: json = @certificado}
-    #end
   end
 
   # GET /certificados/1/edit
@@ -40,6 +31,7 @@ class CertificadosController < ApplicationController
   # POST /certificados.json
   def create
     @certificado = Certificado.new(certificado_params)
+    @certificado.update estado: true
 
     respond_to do |format|
       if @certificado.save!
@@ -57,7 +49,7 @@ class CertificadosController < ApplicationController
   def update
     respond_to do |format|
       if @certificado.update(certificado_params)
-        format.html { redirect_to @certificado, notice: 'Certificado was successfully updated.' }
+        format.html { redirect_to @certificado, notice: 'EL certificado fue actualizado' }
         format.json { render :show, status: :ok, location: @certificado }
       else
         format.html { render :edit }
@@ -77,18 +69,13 @@ class CertificadosController < ApplicationController
     end
   end
 
-​  #def join_cc
   #  @certificados_c = Certificado.joins(:cliente)
-  #end
 
-  def printcertificado
+private
+
+  def set_trace_func
+    @certificado = Certificado.find(params[:id])
   end
-
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_certificado
-      @certificado = Certificado.find(params[:id])
-    end
 
 ​    # Never trust parameters from the scary internet, only allow the white list through.
     def certificado_params
