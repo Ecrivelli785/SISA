@@ -12,7 +12,7 @@ class CertificadosController < ApplicationController
     end
   end
 
-  # GET /certificados/1
+​  # GET /certificados/1
   # GET /certificados/1.json
   def show
     respond_to do |format|
@@ -24,14 +24,19 @@ class CertificadosController < ApplicationController
 
   # GET /certificados/new
   def new
-    @certificado = Certificado.new
+    #@certificado = Certificado.new
+    @certificado = Certificado.new(:cliente_id => params[:cliente_id])
+    #respond_to do |format|
+    #  format.html 
+    #  format.json {render: json = @certificado}
+    #end
   end
 
   # GET /certificados/1/edit
   def edit
   end
 
-  # POST /certificados
+​  # POST /certificados
   # POST /certificados.json
   def create
     @certificado = Certificado.new(certificado_params)
@@ -47,7 +52,7 @@ class CertificadosController < ApplicationController
     end
   end
 
-  # PATCH/PUT /certificados/1
+​  # PATCH/PUT /certificados/1
   # PATCH/PUT /certificados/1.json
   def update
     respond_to do |format|
@@ -61,7 +66,7 @@ class CertificadosController < ApplicationController
     end
   end
 
-  # DELETE /certificados/1
+​  # DELETE /certificados/1
   # DELETE /certificados/1.json
   # BAJA LOGICA DE CERTFICADO, NO ELIMINA EL REGISTRO DE LA BD SINO QUE CAMBIA EL ESTADO A FALSE
   def destroy
@@ -72,9 +77,9 @@ class CertificadosController < ApplicationController
     end
   end
 
-  def join_cc
-    @certificados_c = Certificado.joins(:cliente)
-  end
+​  #def join_cc
+  #  @certificados_c = Certificado.joins(:cliente)
+  #end
 
   def printcertificado
   end
@@ -83,10 +88,13 @@ class CertificadosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_certificado
       @certificado = Certificado.find(params[:id])
+      
+      #@cliente = Cliente.find(params[:cliente_id])
+
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+​    # Never trust parameters from the scary internet, only allow the white list through.
     def certificado_params
-      params.require(:certificado).permit(:id, :nro_certificado, :id_rubro, :id_tratamiento, :id_vector, :vector_tipo, :superficie, :fecha_aplicacion, :fecha_vencimiento, :hora_aplicacion, :proximo_tratamiento, :estado, :observaciones_certificado, :codigo, :droga_tipo, :tratamiento_tipo, :id_cliente, :cliente_id, cliente_attributes: [:cliente_id, :apellido, :client_type, :nombre, :domicilio, :telefono, :celular, :barrio, :estado, :id_rubro, :cuit, :correo])
+      params.require(:certificado).permit(:id, :nro_certificado, :id_rubro, :id_tratamiento, :id_vector, :vector_tipo, :superficie, :fecha_aplicacion, :fecha_vencimiento, :hora_aplicacion, :proximo_tratamiento, :estado, :observaciones_certificado, :codigo, :droga_tipo, :tratamiento_tipo, :id_cliente, cliente_attributes: [:cliente_id, :apellido, :client_type, :nombre, :domicilio, :telefono, :celular, :barrio, :estado, :id_rubro, :cuit, :correo])
     end
 end

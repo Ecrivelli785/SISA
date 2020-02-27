@@ -51,22 +51,22 @@
 
   <tbody>
     <% @certificados.each do |certificado| %>
-      <tr>
-        <td><%= certificado.nro_certificado %></td>
-        <td><%= certificado.cliente.nombre%></td>
-        <td><%= certificado.cliente.apellido%></td>
-        <td><%= certificado.id_rubro %></td>
-        <td><%= certificado.id_tratamiento %></td>
-        <td><%= certificado.id_vector %></td>
-        <td><%= certificado.superficie%></td>
-        <td><%= certificado.id_drogas %></td>
-        <td><%= certificado.fecha_aplicacion %></td>
-        <td><%= certificado.fecha_vencimiento %></td>
-        <td><%= certificado.hora_aplicacion.strftime("%l:%M %p")  %></td>
-        <td><%= certificado.codigo %></td>
-        <td><%= button_to  'Detalle', certificado, method: :get %></td>
-        <td><%= button_to 'Eliminar', certificado_path(certificado),method: :delete, data: { confirm: "Estás seguro?" }  %></td>
-      </tr>
+      <%if certificado.estado == true %>
+        <tr>
+          <td><%= certificado.nro_certificado %></td>
+          <td><%= certificado.id_rubro %></td>
+          <td><%= certificado.id_tratamiento %></td>
+          <td><%= certificado.id_vector %></td>
+          <td><%= certificado.superficie %></td>
+          <td><%= certificado.id_drogas %></td>
+          <td><%= certificado.fecha_aplicacion %></td>
+          <td><%= certificado.fecha_vencimiento %></td>
+          <td><%= certificado.hora_aplicacion.strftime("%l:%M %p")  %></td>
+          <td><%= certificado.codigo %></td>
+          <td><%= button_to  'Detalle', certificado, method: :get %></td>
+          <td><%= button_to 'Eliminar', certificado_path(certificado),method: :delete, data: { confirm: "Estás seguro?" }  %></td>
+        </tr>
+      <% end %>  
     <% end %>
   </tbody>
 </div>

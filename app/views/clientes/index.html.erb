@@ -9,11 +9,12 @@
     <%= link_to 'Nuevo Cliente', new_cliente_path, class: 'btn btn-success btn-cliente' %>
   </div>
 </div>
- <%= form_tag(search_page_path, :method => "get") do %>
+
+<%= form_tag(search_page_path, :method => "get") der06o %>
   <div class="input-group my-3">
     <%= search_field_tag :search, params[:search], placeholder: "Buscar...", class: "form-control" %>
   </div>
-<% end %>
+<%end%>
 
 <div calss="container" style="overflow-y: scroll; height:500px; overflow-x: scroll; width:1000px">
 <table>

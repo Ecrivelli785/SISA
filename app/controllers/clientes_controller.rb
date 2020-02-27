@@ -27,7 +27,6 @@ class ClientesController < ApplicationController
 
   end
 
-
   # POST /clientes
   # POST /clientes.json
   def create
