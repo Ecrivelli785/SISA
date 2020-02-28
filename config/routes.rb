@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :rubros
   root to: 'pages#home'
   get 'calendario', to: 'pages#calendario', as: :calendario
   resources :tecnicos
