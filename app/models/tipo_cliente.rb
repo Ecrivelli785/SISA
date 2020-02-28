@@ -1,2 +1,0 @@
-class TipoCliente < ApplicationRecord
-end

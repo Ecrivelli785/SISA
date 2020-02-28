@@ -1,2 +1,0 @@
-class Droga < ApplicationRecord
-end

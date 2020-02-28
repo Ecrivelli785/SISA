@@ -68,18 +68,6 @@ ActiveRecord::Schema.define(version: 2020_02_22_123838) do
     t.integer "cliente_id"
   end
 
-  create_table "drogas", force: :cascade do |t|
-    t.string "descripcion_td"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "rubros", force: :cascade do |t|
-    t.string "descripcion_tr"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "tecnicos", force: :cascade do |t|
     t.integer "dni"
     t.string "apellido"
@@ -90,24 +78,6 @@ ActiveRecord::Schema.define(version: 2020_02_22_123838) do
     t.string "observaciones_tecnico"
     t.string "telefono"
     t.boolean "estado"
-  end
-
-  create_table "tipos_clientes", force: :cascade do |t|
-    t.string "descripcion_tc"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "tratamientos", force: :cascade do |t|
-    t.string "descripcion_tt"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "vectores", force: :cascade do |t|
-    t.string "descripcion_tv"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
