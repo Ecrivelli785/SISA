@@ -1,2 +1,2 @@
-class Tecnico < ApplicationRecord
-end
+# class Tecnico < ApplicationRecord
+# end
